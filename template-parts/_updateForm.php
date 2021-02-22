@@ -26,7 +26,7 @@ if ('POST' == $_SERVER['REQUEST_METHOD'] && !empty($_POST['action']) && $_POST['
 ?>
 <div class="wbUpdate__content">
     <div class="popupLogo">
-        <img src="/wp-content/themes/waterbridge/images/logo.svg"/>
+        <img src="/wp-content/themes/waterbridge-prod/images/logo.svg"/>
     </div>
     <?php if ( is_user_logged_in() ) : ?>
         <div class="popupStep">

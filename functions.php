@@ -156,7 +156,7 @@ function waterbridge_app_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'waterbridge_app_scripts' );
 
-wp_enqueue_style('custom_style',  '/wp-content/themes/waterbridge/css/custom.css');
+wp_enqueue_style('custom_style',  '/wp-content/themes/waterbridge-prod/css/custom.css');
 
 /**
  * Implement the Custom Header feature.

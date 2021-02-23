@@ -3299,7 +3299,6 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   height: 90px;
-  border-top: 1px dashed rgba(0, 0, 0, 0.2);
 }
 
 .projectsFilter__secTitle {

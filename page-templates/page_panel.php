@@ -64,7 +64,7 @@ get_header(); ?>
                         <?php if ($the_query->have_posts()) : ?>
                             <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
                                 <div class="dropdown__checkbox not-checked">
-                                    <input type="checkbox" name="<?php the_field('tile_address'); ?>"/>
+                                <input type="checkbox" name="<?php the_field('tile_address'); ?>"/>
                                     <label for="<?php the_field('tile_address'); ?>"><?php the_field('tile_address'); ?></label>
                                 </div>
                             <?php endwhile; ?>
@@ -73,8 +73,26 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-            <div class="projectsFilter__sort">
+            <div class="projectsFilter__sort sortBy">
                 <p class="projectsFilter__secTitle">Sortuj według: <span>Najnowsze</span> <img src="/wp-content/themes/waterbridge-prod/images/icons/filter_ico.svg"/></p>
+                <div class="sortBy__dropdown">
+                    <div class="sortBy__select not-checked">
+                        <input type="checkbox" name="od_najmniejszej"/>
+                        <label for="od_najmniejszej">Od najmniejszej kwoty</label>
+                    </div>
+                    <div class="sortBy__select not-checked">
+                        <input type="checkbox" name="od_najwiekszej"/>
+                        <label for="od_najwiekszej">Od najwiekszej kwoty</label>
+                    </div>
+                    <div class="sortBy__select not-checked">
+                        <input type="checkbox" name="najmniej_wplat"/>
+                        <label for="najmniej_wplat">Najmniej wpłat</label>
+                    </div>
+                    <div class="sortBy__select not-checked">
+                        <input type="checkbox" name="najwiecej_wplat"/>
+                        <label for="najwiecej_wplat">Najwiecej wpłat</label>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

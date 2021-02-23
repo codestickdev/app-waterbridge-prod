@@ -205,11 +205,11 @@ get_header();
             <div class="projectStatusSteps">
                 <?php while( have_rows('project_steps') ): the_row(); 
                     $name = get_sub_field('project_steps_name');
-                    $width = get_sub_field('project_steps_toend');
+                    $status = get_sub_field('project_steps_status');
                     $date = get_sub_field('project_steps_date');
                     $count = count(get_field('project_steps'));
                 ?>
-                    <div class="projectStatusSteps__step" style="width: calc(100% / <?php echo $count; ?>)" end="<?php echo $width; ?>">
+                    <div class="projectStatusSteps__step<?php if($status == 'planned'): ?> projectStatusSteps__step--next<?php endif; ?><?php if($status == 'current'): ?> projectStatusSteps__step--current<?php endif; ?><?php if($status == 'end'): ?> projectStatusSteps__step--end<?php endif; ?>" style="width: calc(100% / <?php echo $count; ?>)" end="<?php echo $width; ?>">
                         <div class="projectStatusSteps__content">
                             <h3>Etap <?php echo get_row_index(); ?>.</h3>
                             <p class="name"><?php echo $name; ?></p>

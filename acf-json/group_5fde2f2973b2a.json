@@ -1,0 +1,118 @@
+{
+    "key": "group_5fde2f2973b2a",
+    "title": "Inwestorzy",
+    "fields": [
+        {
+            "key": "field_5fde2f4405334",
+            "label": "Inwestycje",
+            "name": "user_investment",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5fde2f5605335",
+                    "label": "Nazwa inwestycji",
+                    "name": "user_investment_name",
+                    "type": "relationship_multisite",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "site": 2,
+                    "filters": [
+                        "search"
+                    ],
+                    "elements": "",
+                    "max": "",
+                    "return_format": "id",
+                    "post_type": [],
+                    "taxonomy": []
+                },
+                {
+                    "key": "field_5fde2f7b05336",
+                    "label": "Zainwestowana kwota",
+                    "name": "user_investment_value",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "zł",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_602fdb0573b88",
+                    "label": "Zatwierdzona inwestycja?",
+                    "name": "user_investment_accept",
+                    "type": "radio",
+                    "instructions": "Zaznacz TAK jeśli pozycja została zatwierdzona a klient został inwestorem.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "true": "TAK",
+                        "false": "NIE"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "false",
+                    "layout": "horizontal",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "user_form",
+                "operator": "==",
+                "value": "edit"
+            },
+            {
+                "param": "user_role",
+                "operator": "==",
+                "value": "inwestor"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1614084971
+}

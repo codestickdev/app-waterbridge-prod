@@ -185,109 +185,22 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-/* ACF FIELDS */
+/* ACF JSON */
 
-// if( function_exists('acf_add_local_field_group') ):
+add_filter('acf/settings/save_json', 'my_acf_json_save_point');
+function my_acf_json_save_point($path)
+{
+	$path = get_stylesheet_directory() . '/acf-json';
+	return $path;
+}
 
-// 	acf_add_local_field_group(array(
-// 		'key' => 'group_5fde2f2973b2a',
-// 		'title' => 'Inwestorzy',
-// 		'fields' => array(
-// 			array(
-// 				'key' => 'field_5fde2f4405334',
-// 				'label' => 'Inwestycje',
-// 				'name' => 'user_investment',
-// 				'type' => 'repeater',
-// 				'instructions' => '',
-// 				'required' => 0,
-// 				'conditional_logic' => 0,
-// 				'wrapper' => array(
-// 					'width' => '',
-// 					'class' => '',
-// 					'id' => '',
-// 				),
-// 				'collapsed' => '',
-// 				'min' => 0,
-// 				'max' => 0,
-// 				'layout' => 'table',
-// 				'button_label' => '',
-// 				'sub_fields' => array(
-// 					array(
-// 						'key' => 'field_5fde2f5605335',
-// 						'label' => 'Nazwa inwestycji',
-// 						'name' => 'user_investment_name',
-// 						'type' => 'relationship_multisite',
-// 						'instructions' => '',
-// 						'required' => 1,
-// 						'conditional_logic' => 0,
-// 						'wrapper' => array(
-// 							'width' => '',
-// 							'class' => '',
-// 							'id' => '',
-// 						),
-// 						'site' => 1,
-// 						'filters' => array(
-// 							0 => 'search',
-// 							1 => 'post_type',
-// 							2 => 'taxonomy',
-// 						),
-// 						'elements' => '',
-// 						'max' => '',
-// 						'return_format' => 'id',
-// 						'post_type' => array(
-// 						),
-// 						'taxonomy' => array(
-// 						),
-// 					),
-// 					array(
-// 						'key' => 'field_5fde2f7b05336',
-// 						'label' => 'Zainwestowana kwota',
-// 						'name' => 'user_investment_value',
-// 						'type' => 'number',
-// 						'instructions' => '',
-// 						'required' => 1,
-// 						'conditional_logic' => 0,
-// 						'wrapper' => array(
-// 							'width' => '',
-// 							'class' => '',
-// 							'id' => '',
-// 						),
-// 						'default_value' => '',
-// 						'placeholder' => '',
-// 						'prepend' => '',
-// 						'append' => 'zł',
-// 						'min' => '',
-// 						'max' => '',
-// 						'step' => '',
-// 					),
-// 				),
-// 			),
-// 		),
-// 		'location' => array(
-// 			array(
-// 				array(
-// 					'param' => 'user_form',
-// 					'operator' => '==',
-// 					'value' => 'edit',
-// 				),
-// 				array(
-// 					'param' => 'user_role',
-// 					'operator' => '==',
-// 					'value' => 'inwestor',
-// 				),
-// 			),
-// 		),
-// 		'menu_order' => 0,
-// 		'position' => 'normal',
-// 		'style' => 'default',
-// 		'label_placement' => 'top',
-// 		'instruction_placement' => 'label',
-// 		'hide_on_screen' => '',
-// 		'active' => true,
-// 		'description' => '',
-// 	));
-	
-// 	endif;
+add_filter('acf/settings/load_json', 'my_acf_json_load_point');
+function my_acf_json_load_point($paths)
+{
+	unset($paths[0]);
+	$paths[] = get_stylesheet_directory() . '/acf-json';
+	return $paths;
+}
 
 
 /* EXTRA USER FIELDS

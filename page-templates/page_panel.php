@@ -74,7 +74,7 @@ get_header(); ?>
                 </div>
             </div>
             <div class="projectsFilter__sort sortBy">
-                <p class="projectsFilter__secTitle">Sortuj według: <span>Najnowsze</span> <img src="/wp-content/themes/waterbridge-prod/images/icons/filter_ico.svg"/></p>
+                <!-- <p class="projectsFilter__secTitle">Sortuj według: <span>Najnowsze</span> <img src="/wp-content/themes/waterbridge-prod/images/icons/filter_ico.svg"/></p>
                 <div class="sortBy__dropdown">
                     <div class="sortBy__select not-checked">
                         <input type="checkbox" name="od_najmniejszej"/>
@@ -92,7 +92,7 @@ get_header(); ?>
                         <input type="checkbox" name="najwiecej_wplat"/>
                         <label for="najwiecej_wplat">Najwiecej wpłat</label>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

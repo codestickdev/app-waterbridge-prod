@@ -1,4 +1,4 @@
-<article class="tilePanel visible <?php if ($days == 0) : ?>tilePanel--achieved <?php else: ?>tilePanel--active <?php endif; ?>" address="<?php the_field('tile_address'); ?>" targetPrice="<?php the_field('tile_info_price'); ?>" postid="<?php echo get_the_ID(); ?>">
+<article class="tilePanel visible <?php if ($days == 0) : ?>tilePanel--achieved <?php else: ?>tilePanel--active <?php endif; ?><?php if( get_field('tile_unavailable') ): ?> tilePanel--unavailable<?php endif; ?>" address="<?php the_field('tile_address'); ?>" targetPrice="<?php the_field('tile_info_price'); ?>" postid="<?php echo get_the_ID(); ?>">
     
     <div class="tilePanel__thumb">
         <a href="<?php the_permalink(); ?>">

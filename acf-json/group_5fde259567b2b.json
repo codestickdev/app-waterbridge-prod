@@ -19,6 +19,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_60432fddd2719",
+            "label": "Projekt niedostępny",
+            "name": "tile_unavailable",
+            "type": "true_false",
+            "instructions": "Zaznacz jeśli projekt ma widnieć jako \"Inwestycji dostępna wkrótce\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5fde25ad19b95",
             "label": "Zdjęcie główne",
             "name": "tile_image",
@@ -389,6 +408,25 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_60432e51c8a23",
+            "label": "Prezentacja i dane projektu",
+            "name": "projectInfo_infofile",
+            "type": "file",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_60033bbddf7a9",
@@ -780,5 +818,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1614937823
+    "modified": 1615015956
 }

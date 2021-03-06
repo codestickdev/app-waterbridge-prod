@@ -118,7 +118,7 @@ get_header();
         <div class="projectPresentation__wrap">
             <h2>Prezentacja <b>projektu</b></h2>
             <p>Wszystkie informacje o inwestycji możesz z naleźć w przygotowaniej przez nas prezentacji.</p>
-            <a href="#" class="btn btn--download"><span>Pobierz prezentację i dane projektu</span></a>
+            <a href="<?php the_field('projectInfo_infofile'); ?>" target="_blank" class="btn btn--download"><span>Pobierz prezentację i dane projektu</span></a>
         </div>
     </section>
     <?php if( have_rows('project_infoSlider') ): ?>
@@ -144,13 +144,6 @@ get_header();
                 </div>
                 <div class="projectInfoSlide__next">
                     <img src="/wp-content/themes/waterbridge-prod/images/icons/angle_right.svg"/>
-                </div>
-
-                <div class="projectInfoSlide__content">
-                    <div class="wrap">
-                        <h2><?php echo $title; ?></h2>
-                        <p><?php echo $content; ?></p>
-                    </div>
                 </div>
                 <div class="projectInfoSlide__image">
                     <img src="<?php echo $image; ?>"/>
@@ -201,15 +194,22 @@ get_header();
                     </div>
                 </div>
             </div>
-            <?php if( have_rows('project_steps') ): ?>
-            <div class="projectStatusSteps">
+            <?php if( have_rows('project_steps') ):
+                $count = count(get_field('project_steps'));  
+            ?>
+            <?php if($count > 4): ?>
+                <div class="projectStatusSteps__nextSlide">Zobacz kolejne etapy<img src="/wp-content/themes/waterbridge-prod/images/icons/angle_right.svg"/></div>
+            <?php endif; ?>
+            <div class="projectStatusSteps<?php if($count > 4): ?> projectStatusSteps--more<?php endif; ?>">
+                <?php if($count > 4): ?>
+                    <div class="projectStatusSteps__slider">
+                <?php endif; ?>
                 <?php while( have_rows('project_steps') ): the_row(); 
                     $name = get_sub_field('project_steps_name');
                     $status = get_sub_field('project_steps_status');
                     $date = get_sub_field('project_steps_date');
-                    $count = count(get_field('project_steps'));
                 ?>
-                    <div class="projectStatusSteps__step<?php if($status == 'planned'): ?> projectStatusSteps__step--next<?php endif; ?><?php if($status == 'current'): ?> projectStatusSteps__step--current<?php endif; ?><?php if($status == 'end'): ?> projectStatusSteps__step--end<?php endif; ?>" style="width: calc(100% / <?php echo $count; ?>)" end="<?php echo $width; ?>">
+                    <div class="projectStatusSteps__step<?php if($status == 'planned'): ?> projectStatusSteps__step--next<?php endif; ?><?php if($status == 'current'): ?> projectStatusSteps__step--current<?php endif; ?><?php if($status == 'end'): ?> projectStatusSteps__step--end<?php endif; ?>" end="<?php echo $width; ?>">
                         <div class="projectStatusSteps__content">
                             <h3>Etap <?php echo get_row_index(); ?>.</h3>
                             <p class="name"><?php echo $name; ?></p>
@@ -220,6 +220,9 @@ get_header();
                         </div>
                     </div>
                 <?php endwhile; ?>
+                <?php if($count > 4): ?>
+                    </div>
+                <?php endif; ?>
                 <div class="projectSimpleStatus projectSimpleStatus--mobile" style="display: none;">
                     <div class="projectSimpleStatus__bar">
                         <div class="projectSimpleStatus__status"></div>

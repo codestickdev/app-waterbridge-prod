@@ -78,10 +78,12 @@ get_header();
             $image = get_sub_field('project_gallery_image');
             ?>
             <li class="projectGallery__image">
-                <div class="overlay">
-                    <img src="/wp-content/themes/waterbridge-prod/images/icons/zoom.svg"/>
-                </div>
-                <img class="slideimage" src="<?php echo $image; ?>"/>
+                <a href="<?php echo $image; ?>" data-lightbox="projectGallery" class="zoom-photo">
+                    <div class="overlay">
+                        <img src="/wp-content/themes/waterbridge-prod/images/icons/zoom.svg"/>
+                    </div>
+                    <img class="slideimage" src="<?php echo $image; ?>"/>
+                </a>
             </li>
         <?php endwhile; ?>
         </ul>
@@ -156,8 +158,8 @@ get_header();
     <section class="projectStatus">
         <div class="container">
             <div class="projectStatus__heading">
-                <h2>Zainwestuj w <b>Rewir</b></h2>
-                <p>Sprawdż w jakim etapie jest projekt i dołącz na najleszym momencie do inwestycji.</p>
+                <h2><?php the_field('projectInfo_title'); ?></h2>
+                <p><?php the_field('projectInfo_desc') ?></p>
             </div>
             <div class="projectStatus__tile projectStatus__tile--mobile" style="display: none;">
                 <div class="projectStatusTile projectStatusTile--maxLeft projectStatusTile--toTop">

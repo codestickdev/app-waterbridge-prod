@@ -135,15 +135,15 @@ get_header(); ?>
     <?php switch_to_blog(2); ?>
     <section class="investorPrivate">
         <div class="investorPrivate__content">
-            <h2>Dział obsługi <b>prywatnych inwestorów</b></h2>
+            <h2><?php the_field('inwestorPanel_bok_title'); ?></h2>
             <div class="investorPrivate__persons">
-                <img src="/wp-content/themes/waterbridge-prod/images/icons/persons_contact.png"/>
-                <p class="person">Radosław Parzybroda</p>
-                <p class="position">Starszy konsultant klienta</p>
+                <img src="<?php the_field('inwestorPanel_bok_image'); ?>"/>
+                <p class="person"><?php the_field('inwestorPanel_bok_name'); ?></p>
+                <p class="position"><?php the_field('inwestorPanel_bok_position'); ?></p>
             </div>
             <div class="investorPrivate__contact">
-                <a href="tel:22 564 38 98" class="btn"><span>Zadzwoń 22 564 38 98</span></a>
-                <p>lub napisz do nas na adres e-mail <a href="mailto:bok@waterbridge.pl">bok@waterbridge.pl</a></p>
+                <a href="tel:<?php the_field('inwestorPanel_bok_phone'); ?>" class="btn"><span>Zadzwoń <?php the_field('inwestorPanel_bok_phone'); ?></span></a>
+                <p>lub napisz do nas na adres e-mail <a href="mailto:<?php the_field('inwestorPanel_bok_email'); ?>"><?php the_field('inwestorPanel_bok_email'); ?></a></p>
             </div>
         </div>
     </section>

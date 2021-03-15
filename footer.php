@@ -12,8 +12,8 @@
 ?>
 
 <footer class="pageFooter">
-	<div class="pageFooter__wrap container">
-		<div class="pageFooter__menu">
+	<div class="pageFooter__wrap">
+		<div class="pageFooter__menu container">
 			<?php
 			switch_to_blog(1);
 				wp_nav_menu(
@@ -25,14 +25,14 @@
 			switch_to_blog(2);
 			?>
 		</div>
-		<div class="pageFooter__logo">
+		<div class="pageFooter__logo container">
 			<img src="/wp-content/themes/waterbridge-prod/images/logo_white.svg"/>
 		</div>
 		<?php switch_to_blog(1); ?>
 		<div class="pageFooter__content">
 			<?php the_field('footer_content', 12); ?>
 		</div>
-		<div class="pageFooter__policy">
+		<div class="pageFooter__policy container">
 			<a href="<?php echo home_url('/polityka-prywatnosci') ?>">Polityka Prywatności</a>
 			<a href="<?php echo home_url('/regulamin') ?>">Regulamin</a>
 		</div>

@@ -354,7 +354,7 @@ function extract_cf7_data($data) {
 		if ( $submission ) {
 			$cf7_data = $submission->get_posted_data();
 			$getValue = preg_replace('/[^0-9]/', '', $cf7_data['text-478']);
-			$value = $getValue * 500;
+			$value = $getValue * 1000;
 			$currentUserID = 'user_' . $cf7_data['user-id-12'];
 			$field_key = "field_5fde2f4405334";
 			$row = array(
@@ -370,7 +370,7 @@ add_action( 'wp_footer', 'mycustom_wp_footer' );
 function mycustom_wp_footer() { ?>
     <script type="text/javascript">
         document.addEventListener( 'wpcf7mailsent', function( event ) {
-        	if ( '115' == event.detail.contactFormId ) { // Change 123 to the ID of the form 
+        	if ( '115' == event.detail.contactFormId ) {
         		jQuery('.wbInvest__content').addClass('hide');
         		jQuery('.wbInvest__success').addClass('toggle');
     		}

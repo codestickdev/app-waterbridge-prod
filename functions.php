@@ -334,7 +334,7 @@ add_action('wp_loaded', 'my_custom_redirect');
 function my_custom_redirect(){
 	if (!is_user_logged_in()) {
 		switch_to_blog(1);
-		$redirect = home_url();
+		$redirect = home_url('?loginStatus=noLogged');
 		wp_redirect($redirect);
 		switch_to_blog(2);
 		exit;

@@ -234,6 +234,21 @@ get_header();
             <?php endif; ?>
         </div>
     </section>
+    <section class="projectStatusContent">
+        <h2><b>Dołącz</b> do inwestycji</h2>
+        <p>Sprawdź ile możesz zainwestować, oraz ilu inwestorów bierze udział w projekcie.</p>
+    </section>
+    <section class="projectSimpleStatus projectSimpleStatus--steps projectSimpleStatus--two container">
+        <div class="projectStatusTile projectStatusTile--steps projectStatusTile--maxLeft projectStatusTile--toTop">
+            <div class="projectStatusTile__info">
+                <p>Zrealizowaliśmy już <b><span class="donesteps">3</span> z <span class="allsteps">8</span> etapów</b> w projekcie.</p>
+            </div>
+        </div>
+        <div class="projectStatusArrow projectStatusArrow--toTop projectStatusArrow--maxLeft"><img src="/wp-content/themes/waterbridge-prod/images/icons/statusBar_arrow.svg"/></div>
+        <div class="projectSimpleStatus__bar">
+            <div class="projectSimpleStatus__status"></div>
+        </div>
+    </section>
     <section class="projectSimpleStatus projectSimpleStatus--two container">
         <div class="projectStatusTile projectStatusTile--maxLeft projectStatusTile--toTop">
             <div class="projectStatusTile__database">
